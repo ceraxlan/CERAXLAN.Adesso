@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "b7dd4ee2-af57-4b67-a7a5-470d6cf7e9a8": {
+      "ProjectGuid": "b7dd4ee2-af57-4b67-a7a5-470d6cf7e9a8",
+      "DisplayName": "CERAXLAN.Adesso.WebApi",
+      "ColorIndex": 0
+    },
+    "e2760c0b-d398-41b4-97ff-b9cde05b471a": {
+      "ProjectGuid": "e2760c0b-d398-41b4-97ff-b9cde05b471a",
+      "DisplayName": "CERAXLAN.Adesso.Core",
+      "ColorIndex": 1
+    },
+    "7e427137-16bd-4e6b-a78a-7cbfafeab7a7": {
+      "ProjectGuid": "7e427137-16bd-4e6b-a78a-7cbfafeab7a7",
+      "DisplayName": "CERAXLAN.Adesso.Business",
+      "ColorIndex": 2
+    },
+    "99eca29b-29f8-4130-8796-9a6b43209d18": {
+      "ProjectGuid": "99eca29b-29f8-4130-8796-9a6b43209d18",
+      "DisplayName": "CERAXLAN.Adesso.DataAccess",
+      "ColorIndex": 3
+    },
+    "dc70ff64-5c49-49a3-8cbd-1fde86221d4a": {
+      "ProjectGuid": "dc70ff64-5c49-49a3-8cbd-1fde86221d4a",
+      "DisplayName": "CERAXLAN.Adesso.Entities",
+      "ColorIndex": 4
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 5
+}

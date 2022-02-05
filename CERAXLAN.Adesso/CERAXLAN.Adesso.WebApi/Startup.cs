@@ -1,3 +1,6 @@
+using Autofac;
+using CERAXLAN.Adesso.Business.DependencyResolvers.AutoFac;
+using CERAXLAN.Adesso.DataAccess.Concrete.EntityFramework;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -24,9 +27,16 @@ namespace CERAXLAN.Adesso.WebApi
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
+
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
+            builder.RegisterModule(new BusinessModule());
+            builder.RegisterModule(new ValidationModule());
+            builder.RegisterModule(new AutoMapperModule());
+        }
         public void ConfigureServices(IServiceCollection services)
         {
-
+            DatabaseContext.ConnectionString = Configuration.GetConnectionString("DefaultConnection");
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

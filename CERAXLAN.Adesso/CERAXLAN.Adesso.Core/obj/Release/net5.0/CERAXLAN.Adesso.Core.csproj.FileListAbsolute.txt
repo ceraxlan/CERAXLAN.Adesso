@@ -1,0 +1,15 @@
+C:\Users\cerax\Documents\GitHub\CERAXLAN.Adesso\CERAXLAN.Adesso\CERAXLAN.Adesso.Core\bin\Release\net5.0\CERAXLAN.Adesso.Core.pssym
+C:\Users\cerax\Documents\GitHub\CERAXLAN.Adesso\CERAXLAN.Adesso\CERAXLAN.Adesso.Core\bin\Release\net5.0\CERAXLAN.Adesso.Core.pspdb
+C:\Users\cerax\Documents\GitHub\CERAXLAN.Adesso\CERAXLAN.Adesso\CERAXLAN.Adesso.Core\bin\Release\net5.0\CERAXLAN.Adesso.Core.deps.json
+C:\Users\cerax\Documents\GitHub\CERAXLAN.Adesso\CERAXLAN.Adesso\CERAXLAN.Adesso.Core\bin\Release\net5.0\CERAXLAN.Adesso.Core.dll
+C:\Users\cerax\Documents\GitHub\CERAXLAN.Adesso\CERAXLAN.Adesso\CERAXLAN.Adesso.Core\bin\Release\net5.0\CERAXLAN.Adesso.Core.pdb
+C:\Users\cerax\Documents\GitHub\CERAXLAN.Adesso\CERAXLAN.Adesso\CERAXLAN.Adesso.Core\obj\Release\net5.0\CERAXLAN.Adesso.Core.csproj.AssemblyReference.cache
+C:\Users\cerax\Documents\GitHub\CERAXLAN.Adesso\CERAXLAN.Adesso\CERAXLAN.Adesso.Core\obj\Release\net5.0\CERAXLAN.Adesso.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cerax\Documents\GitHub\CERAXLAN.Adesso\CERAXLAN.Adesso\CERAXLAN.Adesso.Core\obj\Release\net5.0\CERAXLAN.Adesso.Core.AssemblyInfoInputs.cache
+C:\Users\cerax\Documents\GitHub\CERAXLAN.Adesso\CERAXLAN.Adesso\CERAXLAN.Adesso.Core\obj\Release\net5.0\CERAXLAN.Adesso.Core.AssemblyInfo.cs
+C:\Users\cerax\Documents\GitHub\CERAXLAN.Adesso\CERAXLAN.Adesso\CERAXLAN.Adesso.Core\obj\Release\net5.0\CERAXLAN.Adesso.Core.csproj.CoreCompileInputs.cache
+C:\Users\cerax\Documents\GitHub\CERAXLAN.Adesso\CERAXLAN.Adesso\CERAXLAN.Adesso.Core\obj\Release\net5.0\PostSharp\touch
+C:\Users\cerax\Documents\GitHub\CERAXLAN.Adesso\CERAXLAN.Adesso\CERAXLAN.Adesso.Core\obj\Release\net5.0\PostSharp\AdditionalBuildDependencies.txt
+C:\Users\cerax\Documents\GitHub\CERAXLAN.Adesso\CERAXLAN.Adesso\CERAXLAN.Adesso.Core\obj\Release\net5.0\CERAXLAN.Adesso.Core.dll
+C:\Users\cerax\Documents\GitHub\CERAXLAN.Adesso\CERAXLAN.Adesso\CERAXLAN.Adesso.Core\obj\Release\net5.0\CERAXLAN.Adesso.Core.pdb
+C:\Users\cerax\Documents\GitHub\CERAXLAN.Adesso\CERAXLAN.Adesso\CERAXLAN.Adesso.Core\obj\Release\net5.0\PostSharp\postsharp.app.config

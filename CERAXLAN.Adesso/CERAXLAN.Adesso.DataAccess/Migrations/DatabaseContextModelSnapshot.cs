@@ -94,7 +94,8 @@ namespace CERAXLAN.Adesso.DataAccess.Migrations
                 {
                     b.HasOne("CERAXLAN.Adesso.Entities.Concrete.Travel", "Travel")
                         .WithMany("Passengers")
-                        .HasForeignKey("TravelId");
+                        .HasForeignKey("TravelId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.Navigation("Travel");
                 });

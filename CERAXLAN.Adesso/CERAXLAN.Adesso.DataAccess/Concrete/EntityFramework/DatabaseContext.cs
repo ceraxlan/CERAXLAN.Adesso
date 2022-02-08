@@ -14,7 +14,7 @@ namespace CERAXLAN.Adesso.DataAccess.Concrete.EntityFramework
         public DbSet<Driver> Drivers { get; set; }
         public DbSet<Passenger> Passengers { get; set; }
 
-        public static string ConnectionString { get; set; } //= "User Id=ceraslan; Password=ceraxlan; Server=CERAXLAN; Database=ADESSO; Integrated Security=True; Connection Timeout=60;";
+        public static string ConnectionString { get; set; } = "User Id=ceraslan; Password=ceraxlan; Server=CERAXLAN; Database=ADESSO; Integrated Security=True; Connection Timeout=60;";
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(ConnectionString);
@@ -23,7 +23,8 @@ namespace CERAXLAN.Adesso.DataAccess.Concrete.EntityFramework
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
-            //modelBuilder.ApplyConfiguration(new ProductMap());
+            modelBuilder.Entity<Travel>().HasMany(c => c.Passengers).WithOne(e => e.Travel)
+                .HasForeignKey(f=>f.TravelId).OnDelete(DeleteBehavior.Cascade);
             
         }
 

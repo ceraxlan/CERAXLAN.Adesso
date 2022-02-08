@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CERAXLAN.Adesso.DataAccess.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20220205161623_DriverAndPassenger9")]
-    partial class DriverAndPassenger9
+    [Migration("20220205213002_Relation")]
+    partial class Relation
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -46,7 +46,7 @@ namespace CERAXLAN.Adesso.DataAccess.Migrations
                     b.Property<string>("PassengerUsername")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("TravelId")
+                    b.Property<int?>("TravelId")
                         .HasColumnType("int");
 
                     b.HasKey("PassengerId");
@@ -94,11 +94,12 @@ namespace CERAXLAN.Adesso.DataAccess.Migrations
 
             modelBuilder.Entity("CERAXLAN.Adesso.Entities.Concrete.Passenger", b =>
                 {
-                    b.HasOne("CERAXLAN.Adesso.Entities.Concrete.Travel", null)
+                    b.HasOne("CERAXLAN.Adesso.Entities.Concrete.Travel", "Travel")
                         .WithMany("Passengers")
                         .HasForeignKey("TravelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.Navigation("Travel");
                 });
 
             modelBuilder.Entity("CERAXLAN.Adesso.Entities.Concrete.Travel", b =>

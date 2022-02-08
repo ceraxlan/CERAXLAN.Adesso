@@ -1,16 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CERAXLAN.Adesso.DataAccess.Migrations
 {
-    public partial class DriverAndPassenger : Migration
+    public partial class Relation : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.RenameColumn(
-                name: "UserId",
-                table: "Travels",
-                newName: "DriverId");
-
             migrationBuilder.CreateTable(
                 name: "Drivers",
                 columns: table => new
@@ -25,13 +21,33 @@ namespace CERAXLAN.Adesso.DataAccess.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Travels",
+                columns: table => new
+                {
+                    TravelId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    WhereFrom = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ToWhere = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Explanation = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CurrentSeatingCapacity = table.Column<int>(type: "int", nullable: false),
+                    MaxSeatingCapacity = table.Column<int>(type: "int", nullable: false),
+                    TravelStatus = table.Column<bool>(type: "bit", nullable: false),
+                    DriverId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Travels", x => x.TravelId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Passengers",
                 columns: table => new
                 {
                     PassengerId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    TravelId = table.Column<int>(type: "int", nullable: false),
-                    PassengerUsername = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    PassengerUsername = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    TravelId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -58,10 +74,8 @@ namespace CERAXLAN.Adesso.DataAccess.Migrations
             migrationBuilder.DropTable(
                 name: "Passengers");
 
-            migrationBuilder.RenameColumn(
-                name: "DriverId",
-                table: "Travels",
-                newName: "UserId");
+            migrationBuilder.DropTable(
+                name: "Travels");
         }
     }
 }

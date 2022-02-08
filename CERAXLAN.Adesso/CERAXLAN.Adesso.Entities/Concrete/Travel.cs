@@ -21,6 +21,6 @@ namespace CERAXLAN.Adesso.Entities.Concrete
         public int MaxSeatingCapacity { get; set; } 
         public bool TravelStatus { get; set; } = true;
         public int DriverId { get; set; }     
-        public virtual IList<Passenger> Passengers { get; set; }
+        public ICollection<Passenger> Passengers { get; set; }
     }
 }

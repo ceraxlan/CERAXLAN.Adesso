@@ -12,9 +12,9 @@ namespace CERAXLAN.Adesso.Entities.Concrete
     public class Passenger : IEntity
     {
         [Key]
-        public int PassengerId { get; set; }
+        public int PassengerId { get; set; }       
+        public string PassengerUsername { get; set; }
         public int? TravelId { get; set; }
         public Travel Travel { get; set; }
-        public string PassengerUsername { get; set; }
     }
 }

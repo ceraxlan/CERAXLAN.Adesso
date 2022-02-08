@@ -10,5 +10,6 @@ namespace CERAXLAN.Adesso.Entities.Request.Travel
     {
         public string PassengerUsername { get; set; }
         public int TravelId { get; set; }
+        
     }
 }

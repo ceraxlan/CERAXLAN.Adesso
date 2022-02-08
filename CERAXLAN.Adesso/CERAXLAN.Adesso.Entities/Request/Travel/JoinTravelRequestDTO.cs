@@ -8,7 +8,7 @@ namespace CERAXLAN.Adesso.Entities.Request.Travel
 {
     public class JoinTravelRequestDTO
     {
-        public string PassengerUsername { get; set; }
+        public int PassengerId { get; set; }
         public int TravelId { get; set; }
         
     }

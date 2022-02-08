@@ -49,7 +49,16 @@ namespace CERAXLAN.Adesso.Business.Concrete.Managers
 
         public Travel GetById(int id)
         {
-            return _travelDal.Get(t=>t.TravelId == id);
+            return _travelDal.Get(t => t.TravelId == id);
+        }
+
+        public Travel GetByIdWithPassengers(int id)
+        {
+            var travel = _travelDal.Get(t => t.TravelId == id);
+            var passengers = _passengerDal.GetList(p => p.TravelId == id);
+            travel.Passengers = passengers;
+            travel.CurrentSeatingCapacity = passengers.Count();
+            return travel;
         }
 
         public List<Travel> GetTravelsByDriverId(int id)
@@ -57,18 +66,6 @@ namespace CERAXLAN.Adesso.Business.Concrete.Managers
             return _travelDal.GetList(t=>t.DriverId==id);
         }
 
-        //public Travel UpdateTravelCapacity(JoinTravelRequestDTO request)
-        //{
-        //    var travel = GetById(request.TravelId);
-        //    if(travel.MaxSeatingCapacity > travel.CurrentSeatingCapacity && travel.TravelStatus==true)
-        //    {
-        //        travel.CurrentSeatingCapacity++;
-        //        var passenger = _passengerDal.Get(p=>p.PassengerId==request.PassengerId);
-        //        travel.Passengers.Add(passenger);
-        //        return _travelDal.Update(travel);
-        //    }
-        //    return travel;
-        //}
 
         public Travel UpdateTravelStatus(UpdateTravelStatusRequestDTO request)
         {

@@ -12,6 +12,9 @@ namespace CERAXLAN.Adesso.Business.Abstract
     public interface IPassengerService
     {
         List<Passenger> GetAll();
-        Passenger Add(JoinTravelRequestDTO request);
+        Passenger Add(CreatePassengerRequestDTO request);
+        Passenger JoinToTravel(JoinTravelRequestDTO request);
+
+        Passenger LeaveFromTravel(int passengerId);
     }
 }

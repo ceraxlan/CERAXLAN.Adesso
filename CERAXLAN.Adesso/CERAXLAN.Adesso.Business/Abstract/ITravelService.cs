@@ -13,6 +13,7 @@ namespace CERAXLAN.Adesso.Business.Abstract
     {
         List<Travel> GetAll();
         Travel GetById(int id);
+        Travel GetByIdWithPassengers(int id);
         List<Travel> FindTravel(FindTravelRequestDTO request);
         Travel Add(CreateTravelRequestDTO travel);
         Travel UpdateTravelStatus(UpdateTravelStatusRequestDTO request);

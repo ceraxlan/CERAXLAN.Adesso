@@ -23,8 +23,8 @@ namespace CERAXLAN.Adesso.DataAccess.Concrete.EntityFramework
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
-            modelBuilder.Entity<Travel>().HasMany(c => c.Passengers).WithOne(e => e.Travel)
-                .HasForeignKey(f=>f.TravelId).OnDelete(DeleteBehavior.Cascade);
+            //modelBuilder.Entity<Travel>().HasMany(c => c.Passengers).WithOne(e => e.Travel)
+            //    .HasForeignKey(f=>f.TravelId).OnDelete(DeleteBehavior.Cascade);
             
         }
 

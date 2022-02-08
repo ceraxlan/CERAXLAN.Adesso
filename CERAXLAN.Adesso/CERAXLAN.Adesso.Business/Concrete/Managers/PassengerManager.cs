@@ -18,10 +18,12 @@ namespace CERAXLAN.Adesso.Business.Concrete.Managers
     {
         private readonly IPassengerDal _passengerDal;
         private readonly IMapper _mapper;
-        public PassengerManager(IPassengerDal passengerDal, IMapper mapper)
+        private readonly ITravelDal _travelDal;
+        public PassengerManager(IPassengerDal passengerDal, IMapper mapper, ITravelDal travelDal)
         {
             _passengerDal = passengerDal;
             _mapper = mapper;
+            _travelDal = travelDal;
         }
 
         [CacheRemoveAspect(typeof(MemoryCacheManager))]
@@ -30,10 +32,35 @@ namespace CERAXLAN.Adesso.Business.Concrete.Managers
             return _passengerDal.Add(_mapper.Map<Passenger>(request));
         }
 
+        public Passenger Add(CreatePassengerRequestDTO request)
+        {
+            return _passengerDal.Add(_mapper.Map<Passenger>( request));
+        }
+
         [CacheAspect(typeof(MemoryCacheManager))]
         public List<Passenger> GetAll()
         {
             return _passengerDal.GetList();
+        }
+
+        public Passenger JoinToTravel(JoinTravelRequestDTO request)
+        {
+            var passenger = _passengerDal.Get(p=>p.PassengerId==request.PassengerId);
+            var travel = _travelDal.Get(t=>t.TravelId==request.TravelId);
+            if (travel.Passengers.Count() < travel.MaxSeatingCapacity)
+            {               
+                passenger.TravelId = request.TravelId;
+                return _passengerDal.Update(passenger);
+            }
+            return passenger;
+            
+        }
+
+        public Passenger LeaveFromTravel(int passengerId)
+        {
+            var passenger = _passengerDal.Get(p=>p.PassengerId == passengerId);
+            passenger.TravelId = null;
+            return _passengerDal.Update(passenger);
         }
     }
 }

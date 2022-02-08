@@ -30,23 +30,11 @@ namespace CERAXLAN.Adesso.WebApi.Controllers
             return Ok(_travelService.GetAll());
         }
 
-        //[HttpPost("CreateTravel")]
-        //public IActionResult CreateTravel(CreateTravelRequestDTO travel)
-        //{
-        //    return Ok(_travelService.Add(travel));
-        //}
-
-        //[HttpPut("UpdateTravelStatus")]
-        //public IActionResult UpdateTravelStatus(UpdateTravelStatusRequestDTO request)
-        //{
-        //    return Ok(_travelService.UpdateTravelStatus(request));
-        //}
-
-        //[HttpPost("JoinTravel")]
-        //public IActionResult JoinTravel(CreateTravelRequestDTO travel)
-        //{
-        //    return Ok(_travelService.Add(travel));
-        //}
+        [HttpPost("GetTravelWithPassengers")]
+        public IActionResult GetTravelWithPassengers(int id)
+        {
+            return Ok(_travelService.GetByIdWithPassengers(id));
+        }
 
     }
 }

@@ -4,14 +4,16 @@ using CERAXLAN.Adesso.DataAccess.Concrete.EntityFramework;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CERAXLAN.Adesso.DataAccess.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20220208104557_ilist")]
+    partial class ilist
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -44,7 +46,7 @@ namespace CERAXLAN.Adesso.DataAccess.Migrations
                     b.Property<string>("PassengerUsername")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("TravelId")
+                    b.Property<int>("TravelId")
                         .HasColumnType("int");
 
                     b.HasKey("PassengerId");
@@ -94,7 +96,9 @@ namespace CERAXLAN.Adesso.DataAccess.Migrations
                 {
                     b.HasOne("CERAXLAN.Adesso.Entities.Concrete.Travel", null)
                         .WithMany("Passengers")
-                        .HasForeignKey("TravelId");
+                        .HasForeignKey("TravelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("CERAXLAN.Adesso.Entities.Concrete.Travel", b =>

@@ -20,6 +20,8 @@ namespace CERAXLAN.Adesso.Business.Mappings.AutoMapper.Profiles
             CreateMap<CreateTravelRequestDTO, Travel>();
             CreateMap<CreateDriverRequestDTO, Driver>();
             CreateMap<JoinTravelRequestDTO, Passenger>();
+            CreateMap<CreatePassengerRequestDTO, Passenger>();
+
 
 
         }
